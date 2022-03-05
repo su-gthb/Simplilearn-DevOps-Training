@@ -2,3 +2,4 @@ cred.tf
 *.tfstate
 *.backup
 .terraform/*
+.terraform.*
