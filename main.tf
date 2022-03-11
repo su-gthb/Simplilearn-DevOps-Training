@@ -1,3 +1,9 @@
+locals {
+  ssh_user = "ec2-user"
+  key_name = "devops"
+  private_key_path = "~/.ssh/devops"  
+}
+
 #1. Create new Key pair
 resource "aws_key_pair" "DevOps-Key" {
     key_name = "devops"
@@ -75,7 +81,7 @@ resource "aws_security_group" "DevOps-SG" {
     cidr_blocks      = ["0.0.0.0/0"]    
   }
 
-    ingress {
+  ingress {
     description      = "HTTP"
     from_port        = 80
     to_port          = 80
@@ -83,7 +89,7 @@ resource "aws_security_group" "DevOps-SG" {
     cidr_blocks      = ["0.0.0.0/0"]    
   }
 
-    ingress {
+  ingress {
     description      = "SSH"
     from_port        = 22
     to_port          = 22
@@ -91,11 +97,11 @@ resource "aws_security_group" "DevOps-SG" {
     cidr_blocks      = ["0.0.0.0/0"]    
   }
 
-    ingress {
-    description      = "Ping"
-    from_port        = 0
-    to_port          = 0
-    protocol         = "ICMP"
+  ingress {
+    description      = "Enable Jenkins Port"
+    from_port        = 8080
+    to_port          = 8080
+    protocol         = "tcp"
     cidr_blocks      = ["0.0.0.0/0"]    
   }
 
@@ -130,7 +136,7 @@ resource "aws_eip" "Dev-Ops-eip" {
 }
 
 
-#. Deploy Host in Project VPC
+#11. Deploy Host in Project VPC
 resource "aws_instance" "Jenkins-Host" {
     ami = "ami-076754bea03bde973"
     instance_type = "t2.micro"
@@ -140,6 +146,20 @@ resource "aws_instance" "Jenkins-Host" {
         device_index = 0
         network_interface_id = aws_network_interface.DevOps-nic.id
     }
+
+    provisioner "remote-exec" {
+      inline = ["echo 'wait until SSH is ready'"]
+
+      connection {
+        type = "ssh"
+        user = local.ssh_user
+        private_key = file(local.private_key_path)
+        host = aws_instance.Jenkins-Host.public_ip        
+      }  
+    }
+    provisioner "local-exec" {
+      command = "ansible-playbook  -i ${aws_instance.Jenkins-Host.public_ip}, --private-key ${local.private_key_path} /home/sumit/Documents/Simplilearn-DevOps-Training/playbook/DevOps-tasks.yml"
+      }
 
     tags = { Name = "Jenkins-Host" }  
 }
