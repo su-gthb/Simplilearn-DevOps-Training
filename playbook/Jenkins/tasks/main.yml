@@ -1,0 +1,23 @@
+---
+# tasks file for Jenkins
+- name: Download jenkins.repo
+  get_url:
+    url: https://pkg.jenkins.io/redhat-stable/jenkins.repo
+    dest: /etc/yum.repos.d/jenkins.repo
+
+- name: Import Jenkins Key
+  rpm_key:
+    state: present
+    key: https://pkg.jenkins.io/redhat-stable/jenkins.io.key  
+
+- name: Install Jenkins
+  yum:
+    name: jenkins
+    state: present
+
+- name: Start & Enable Jenkins
+  systemd:
+    name: jenkins
+    state: started
+    enabled: true
+
