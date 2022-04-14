@@ -1,0 +1,543 @@
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  [32m+[0m create
+[0m
+Terraform will perform the following actions:
+
+[1m  # aws_eip.Dev-Ops-eip[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_eip" "Dev-Ops-eip" {
+      [32m+[0m [0m[1m[0mallocation_id[0m[0m             = (known after apply)
+      [32m+[0m [0m[1m[0massociate_with_private_ip[0m[0m = "10.0.1.50"
+      [32m+[0m [0m[1m[0massociation_id[0m[0m            = (known after apply)
+      [32m+[0m [0m[1m[0mcarrier_ip[0m[0m                = (known after apply)
+      [32m+[0m [0m[1m[0mcustomer_owned_ip[0m[0m         = (known after apply)
+      [32m+[0m [0m[1m[0mdomain[0m[0m                    = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m                        = (known after apply)
+      [32m+[0m [0m[1m[0minstance[0m[0m                  = (known after apply)
+      [32m+[0m [0m[1m[0mnetwork_border_group[0m[0m      = (known after apply)
+      [32m+[0m [0m[1m[0mnetwork_interface[0m[0m         = (known after apply)
+      [32m+[0m [0m[1m[0mprivate_dns[0m[0m               = (known after apply)
+      [32m+[0m [0m[1m[0mprivate_ip[0m[0m                = (known after apply)
+      [32m+[0m [0m[1m[0mpublic_dns[0m[0m                = (known after apply)
+      [32m+[0m [0m[1m[0mpublic_ip[0m[0m                 = (known after apply)
+      [32m+[0m [0m[1m[0mpublic_ipv4_pool[0m[0m          = (known after apply)
+      [32m+[0m [0m[1m[0mtags[0m[0m                      = {
+          [32m+[0m [0m"Name" = "Dev-Ops-eip"
+        }
+      [32m+[0m [0m[1m[0mtags_all[0m[0m                  = {
+          [32m+[0m [0m"Name" = "Dev-Ops-eip"
+        }
+      [32m+[0m [0m[1m[0mvpc[0m[0m                       = true
+    }
+
+[1m  # aws_instance.Jenkins-Host[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_instance" "Jenkins-Host" {
+      [32m+[0m [0m[1m[0mami[0m[0m                                  = "ami-076754bea03bde973"
+      [32m+[0m [0m[1m[0marn[0m[0m                                  = (known after apply)
+      [32m+[0m [0m[1m[0massociate_public_ip_address[0m[0m          = (known after apply)
+      [32m+[0m [0m[1m[0mavailability_zone[0m[0m                    = "ap-south-1a"
+      [32m+[0m [0m[1m[0mcpu_core_count[0m[0m                       = (known after apply)
+      [32m+[0m [0m[1m[0mcpu_threads_per_core[0m[0m                 = (known after apply)
+      [32m+[0m [0m[1m[0mdisable_api_termination[0m[0m              = (known after apply)
+      [32m+[0m [0m[1m[0mebs_optimized[0m[0m                        = (known after apply)
+      [32m+[0m [0m[1m[0mget_password_data[0m[0m                    = false
+      [32m+[0m [0m[1m[0mhost_id[0m[0m                              = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m                                   = (known after apply)
+      [32m+[0m [0m[1m[0minstance_initiated_shutdown_behavior[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0minstance_state[0m[0m                       = (known after apply)
+      [32m+[0m [0m[1m[0minstance_type[0m[0m                        = "t2.micro"
+      [32m+[0m [0m[1m[0mipv6_address_count[0m[0m                   = (known after apply)
+      [32m+[0m [0m[1m[0mipv6_addresses[0m[0m                       = (known after apply)
+      [32m+[0m [0m[1m[0mkey_name[0m[0m                             = "devops"
+      [32m+[0m [0m[1m[0mmonitoring[0m[0m                           = (known after apply)
+      [32m+[0m [0m[1m[0moutpost_arn[0m[0m                          = (known after apply)
+      [32m+[0m [0m[1m[0mpassword_data[0m[0m                        = (known after apply)
+      [32m+[0m [0m[1m[0mplacement_group[0m[0m                      = (known after apply)
+      [32m+[0m [0m[1m[0mplacement_partition_number[0m[0m           = (known after apply)
+      [32m+[0m [0m[1m[0mprimary_network_interface_id[0m[0m         = (known after apply)
+      [32m+[0m [0m[1m[0mprivate_dns[0m[0m                          = (known after apply)
+      [32m+[0m [0m[1m[0mprivate_ip[0m[0m                           = (known after apply)
+      [32m+[0m [0m[1m[0mpublic_dns[0m[0m                           = (known after apply)
+      [32m+[0m [0m[1m[0mpublic_ip[0m[0m                            = (known after apply)
+      [32m+[0m [0m[1m[0msecondary_private_ips[0m[0m                = (known after apply)
+      [32m+[0m [0m[1m[0msecurity_groups[0m[0m                      = (known after apply)
+      [32m+[0m [0m[1m[0msubnet_id[0m[0m                            = (known after apply)
+      [32m+[0m [0m[1m[0mtags[0m[0m                                 = {
+          [32m+[0m [0m"Name" = "Jenkins-Host"
+        }
+      [32m+[0m [0m[1m[0mtags_all[0m[0m                             = {
+          [32m+[0m [0m"Name" = "Jenkins-Host"
+        }
+      [32m+[0m [0m[1m[0mtenancy[0m[0m                              = (known after apply)
+      [32m+[0m [0m[1m[0muser_data[0m[0m                            = (known after apply)
+      [32m+[0m [0m[1m[0muser_data_base64[0m[0m                     = (known after apply)
+      [32m+[0m [0m[1m[0mvpc_security_group_ids[0m[0m               = (known after apply)
+
+      [32m+[0m [0mcapacity_reservation_specification {
+          [32m+[0m [0m[1m[0mcapacity_reservation_preference[0m[0m = (known after apply)
+
+          [32m+[0m [0mcapacity_reservation_target {
+              [32m+[0m [0m[1m[0mcapacity_reservation_id[0m[0m = (known after apply)
+            }
+        }
+
+      [32m+[0m [0mebs_block_device {
+          [32m+[0m [0m[1m[0mdelete_on_termination[0m[0m = (known after apply)
+          [32m+[0m [0m[1m[0mdevice_name[0m[0m           = (known after apply)
+          [32m+[0m [0m[1m[0mencrypted[0m[0m             = (known after apply)
+          [32m+[0m [0m[1m[0miops[0m[0m                  = (known after apply)
+          [32m+[0m [0m[1m[0mkms_key_id[0m[0m            = (known after apply)
+          [32m+[0m [0m[1m[0msnapshot_id[0m[0m           = (known after apply)
+          [32m+[0m [0m[1m[0mtags[0m[0m                  = (known after apply)
+          [32m+[0m [0m[1m[0mthroughput[0m[0m            = (known after apply)
+          [32m+[0m [0m[1m[0mvolume_id[0m[0m             = (known after apply)
+          [32m+[0m [0m[1m[0mvolume_size[0m[0m           = (known after apply)
+          [32m+[0m [0m[1m[0mvolume_type[0m[0m           = (known after apply)
+        }
+
+      [32m+[0m [0menclave_options {
+          [32m+[0m [0m[1m[0menabled[0m[0m = (known after apply)
+        }
+
+      [32m+[0m [0mephemeral_block_device {
+          [32m+[0m [0m[1m[0mdevice_name[0m[0m  = (known after apply)
+          [32m+[0m [0m[1m[0mno_device[0m[0m    = (known after apply)
+          [32m+[0m [0m[1m[0mvirtual_name[0m[0m = (known after apply)
+        }
+
+      [32m+[0m [0mmetadata_options {
+          [32m+[0m [0m[1m[0mhttp_endpoint[0m[0m               = (known after apply)
+          [32m+[0m [0m[1m[0mhttp_put_response_hop_limit[0m[0m = (known after apply)
+          [32m+[0m [0m[1m[0mhttp_tokens[0m[0m                 = (known after apply)
+          [32m+[0m [0m[1m[0minstance_metadata_tags[0m[0m      = (known after apply)
+        }
+
+      [32m+[0m [0mnetwork_interface {
+          [32m+[0m [0m[1m[0mdelete_on_termination[0m[0m = false
+          [32m+[0m [0m[1m[0mdevice_index[0m[0m          = 0
+          [32m+[0m [0m[1m[0mnetwork_interface_id[0m[0m  = (known after apply)
+        }
+
+      [32m+[0m [0mroot_block_device {
+          [32m+[0m [0m[1m[0mdelete_on_termination[0m[0m = (known after apply)
+          [32m+[0m [0m[1m[0mdevice_name[0m[0m           = (known after apply)
+          [32m+[0m [0m[1m[0mencrypted[0m[0m             = (known after apply)
+          [32m+[0m [0m[1m[0miops[0m[0m                  = (known after apply)
+          [32m+[0m [0m[1m[0mkms_key_id[0m[0m            = (known after apply)
+          [32m+[0m [0m[1m[0mtags[0m[0m                  = (known after apply)
+          [32m+[0m [0m[1m[0mthroughput[0m[0m            = (known after apply)
+          [32m+[0m [0m[1m[0mvolume_id[0m[0m             = (known after apply)
+          [32m+[0m [0m[1m[0mvolume_size[0m[0m           = (known after apply)
+          [32m+[0m [0m[1m[0mvolume_type[0m[0m           = (known after apply)
+        }
+    }
+
+[1m  # aws_internet_gateway.DevOps-IGW[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_internet_gateway" "DevOps-IGW" {
+      [32m+[0m [0m[1m[0marn[0m[0m      = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m       = (known after apply)
+      [32m+[0m [0m[1m[0mowner_id[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0mtags[0m[0m     = {
+          [32m+[0m [0m"Name" = "DevOps-IGW"
+        }
+      [32m+[0m [0m[1m[0mtags_all[0m[0m = {
+          [32m+[0m [0m"Name" = "DevOps-IGW"
+        }
+      [32m+[0m [0m[1m[0mvpc_id[0m[0m   = (known after apply)
+    }
+
+[1m  # aws_key_pair.DevOps-Key[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_key_pair" "DevOps-Key" {
+      [32m+[0m [0m[1m[0marn[0m[0m             = (known after apply)
+      [32m+[0m [0m[1m[0mfingerprint[0m[0m     = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m              = (known after apply)
+      [32m+[0m [0m[1m[0mkey_name[0m[0m        = "devops"
+      [32m+[0m [0m[1m[0mkey_name_prefix[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0mkey_pair_id[0m[0m     = (known after apply)
+      [32m+[0m [0m[1m[0mpublic_key[0m[0m      = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCtQVfN3Rw+LjoPpcG/RR4yuFmU4jqhTxLseAAHabVEEr8C/vLRF+w3V8fHpZfYWjj03vOenFoX7sD0Ng6v7kD75dGBGw3P1fvDfrJ3THetgrOJtXRNn3DL8bN2t4rtwhWxUAyV8DPfLGy1o0RR56puibcJQOV4fCtGWMrMrxEUM4lwNeX7gncK1nDGYl9ubX8E9YcvynIWPA6zmPMlAsw/8GUeuMiKCyGg+nDxiWTqG31u/p+hOKMSLUHPDvTX6VYxjZfeXHt/dczKDUz0QABdJx46QhAZYzzbE5EuEXCeAUTDfUR+cwtC2ytE9JiQ6ZyP5+RG4vCouZ5Tdu11Gmfsgk3OUua857YGFn2q6DDlbz1eo/SWeipCICIT9LhwmlK1XL5SiJbLA3makbsOe430Q85PIcnP8YOVDK066xPI6O/5Izbxz0YDxWBdFYsQa/gHVZ503g0Ii6Z8Rh4QrPEDqg1ULRAyyinUKRwuX/K3UkvQSV9/URoHD2npSzMxcr8= sumit@MyMintMachine"
+      [32m+[0m [0m[1m[0mtags_all[0m[0m        = (known after apply)
+    }
+
+[1m  # aws_network_interface.DevOps-nic[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_network_interface" "DevOps-nic" {
+      [32m+[0m [0m[1m[0marn[0m[0m                       = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m                        = (known after apply)
+      [32m+[0m [0m[1m[0minterface_type[0m[0m            = (known after apply)
+      [32m+[0m [0m[1m[0mipv4_prefix_count[0m[0m         = (known after apply)
+      [32m+[0m [0m[1m[0mipv4_prefixes[0m[0m             = (known after apply)
+      [32m+[0m [0m[1m[0mipv6_address_count[0m[0m        = (known after apply)
+      [32m+[0m [0m[1m[0mipv6_address_list[0m[0m         = (known after apply)
+      [32m+[0m [0m[1m[0mipv6_address_list_enabled[0m[0m = false
+      [32m+[0m [0m[1m[0mipv6_addresses[0m[0m            = (known after apply)
+      [32m+[0m [0m[1m[0mipv6_prefix_count[0m[0m         = (known after apply)
+      [32m+[0m [0m[1m[0mipv6_prefixes[0m[0m             = (known after apply)
+      [32m+[0m [0m[1m[0mmac_address[0m[0m               = (known after apply)
+      [32m+[0m [0m[1m[0moutpost_arn[0m[0m               = (known after apply)
+      [32m+[0m [0m[1m[0mowner_id[0m[0m                  = (known after apply)
+      [32m+[0m [0m[1m[0mprivate_dns_name[0m[0m          = (known after apply)
+      [32m+[0m [0m[1m[0mprivate_ip[0m[0m                = (known after apply)
+      [32m+[0m [0m[1m[0mprivate_ip_list[0m[0m           = (known after apply)
+      [32m+[0m [0m[1m[0mprivate_ip_list_enabled[0m[0m   = false
+      [32m+[0m [0m[1m[0mprivate_ips[0m[0m               = [
+          [32m+[0m [0m"10.0.1.50",
+        ]
+      [32m+[0m [0m[1m[0mprivate_ips_count[0m[0m         = (known after apply)
+      [32m+[0m [0m[1m[0msecurity_groups[0m[0m           = (known after apply)
+      [32m+[0m [0m[1m[0msource_dest_check[0m[0m         = true
+      [32m+[0m [0m[1m[0msubnet_id[0m[0m                 = (known after apply)
+      [32m+[0m [0m[1m[0mtags_all[0m[0m                  = (known after apply)
+
+      [32m+[0m [0mattachment {
+          [32m+[0m [0m[1m[0mattachment_id[0m[0m = (known after apply)
+          [32m+[0m [0m[1m[0mdevice_index[0m[0m  = (known after apply)
+          [32m+[0m [0m[1m[0minstance[0m[0m      = (known after apply)
+        }
+    }
+
+[1m  # aws_route_table.DevOps-rt[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_route_table" "DevOps-rt" {
+      [32m+[0m [0m[1m[0marn[0m[0m              = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m               = (known after apply)
+      [32m+[0m [0m[1m[0mowner_id[0m[0m         = (known after apply)
+      [32m+[0m [0m[1m[0mpropagating_vgws[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0mroute[0m[0m            = [
+          [32m+[0m [0m{
+              [32m+[0m [0mcarrier_gateway_id         = ""
+              [32m+[0m [0mcidr_block                 = "0.0.0.0/0"
+              [32m+[0m [0mdestination_prefix_list_id = ""
+              [32m+[0m [0megress_only_gateway_id     = ""
+              [32m+[0m [0mgateway_id                 = (known after apply)
+              [32m+[0m [0minstance_id                = ""
+              [32m+[0m [0mipv6_cidr_block            = ""
+              [32m+[0m [0mlocal_gateway_id           = ""
+              [32m+[0m [0mnat_gateway_id             = ""
+              [32m+[0m [0mnetwork_interface_id       = ""
+              [32m+[0m [0mtransit_gateway_id         = ""
+              [32m+[0m [0mvpc_endpoint_id            = ""
+              [32m+[0m [0mvpc_peering_connection_id  = ""
+            },
+        ]
+      [32m+[0m [0m[1m[0mtags[0m[0m             = {
+          [32m+[0m [0m"Name" = "DevOps-rt"
+        }
+      [32m+[0m [0m[1m[0mtags_all[0m[0m         = {
+          [32m+[0m [0m"Name" = "DevOps-rt"
+        }
+      [32m+[0m [0m[1m[0mvpc_id[0m[0m           = (known after apply)
+    }
+
+[1m  # aws_route_table_association.a[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_route_table_association" "a" {
+      [32m+[0m [0m[1m[0mid[0m[0m             = (known after apply)
+      [32m+[0m [0m[1m[0mroute_table_id[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0msubnet_id[0m[0m      = (known after apply)
+    }
+
+[1m  # aws_security_group.DevOps-SG[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_security_group" "DevOps-SG" {
+      [32m+[0m [0m[1m[0marn[0m[0m                    = (known after apply)
+      [32m+[0m [0m[1m[0mdescription[0m[0m            = "Allow SSH,HTTP Traffic to our instance"
+      [32m+[0m [0m[1m[0megress[0m[0m                 = [
+          [32m+[0m [0m{
+              [32m+[0m [0mcidr_blocks      = [
+                  [32m+[0m [0m"0.0.0.0/0",
+                ]
+              [32m+[0m [0mdescription      = ""
+              [32m+[0m [0mfrom_port        = 0
+              [32m+[0m [0mipv6_cidr_blocks = [
+                  [32m+[0m [0m"::/0",
+                ]
+              [32m+[0m [0mprefix_list_ids  = []
+              [32m+[0m [0mprotocol         = "-1"
+              [32m+[0m [0msecurity_groups  = []
+              [32m+[0m [0mself             = false
+              [32m+[0m [0mto_port          = 0
+            },
+        ]
+      [32m+[0m [0m[1m[0mid[0m[0m                     = (known after apply)
+      [32m+[0m [0m[1m[0mingress[0m[0m                = [
+          [32m+[0m [0m{
+              [32m+[0m [0mcidr_blocks      = [
+                  [32m+[0m [0m"0.0.0.0/0",
+                ]
+              [32m+[0m [0mdescription      = "Enable Jenkins Port"
+              [32m+[0m [0mfrom_port        = 8080
+              [32m+[0m [0mipv6_cidr_blocks = []
+              [32m+[0m [0mprefix_list_ids  = []
+              [32m+[0m [0mprotocol         = "tcp"
+              [32m+[0m [0msecurity_groups  = []
+              [32m+[0m [0mself             = false
+              [32m+[0m [0mto_port          = 8080
+            },
+          [32m+[0m [0m{
+              [32m+[0m [0mcidr_blocks      = [
+                  [32m+[0m [0m"0.0.0.0/0",
+                ]
+              [32m+[0m [0mdescription      = "HTTP"
+              [32m+[0m [0mfrom_port        = 80
+              [32m+[0m [0mipv6_cidr_blocks = []
+              [32m+[0m [0mprefix_list_ids  = []
+              [32m+[0m [0mprotocol         = "tcp"
+              [32m+[0m [0msecurity_groups  = []
+              [32m+[0m [0mself             = false
+              [32m+[0m [0mto_port          = 80
+            },
+          [32m+[0m [0m{
+              [32m+[0m [0mcidr_blocks      = [
+                  [32m+[0m [0m"0.0.0.0/0",
+                ]
+              [32m+[0m [0mdescription      = "HTTPS"
+              [32m+[0m [0mfrom_port        = 443
+              [32m+[0m [0mipv6_cidr_blocks = []
+              [32m+[0m [0mprefix_list_ids  = []
+              [32m+[0m [0mprotocol         = "tcp"
+              [32m+[0m [0msecurity_groups  = []
+              [32m+[0m [0mself             = false
+              [32m+[0m [0mto_port          = 443
+            },
+          [32m+[0m [0m{
+              [32m+[0m [0mcidr_blocks      = [
+                  [32m+[0m [0m"0.0.0.0/0",
+                ]
+              [32m+[0m [0mdescription      = "SSH"
+              [32m+[0m [0mfrom_port        = 22
+              [32m+[0m [0mipv6_cidr_blocks = []
+              [32m+[0m [0mprefix_list_ids  = []
+              [32m+[0m [0mprotocol         = "tcp"
+              [32m+[0m [0msecurity_groups  = []
+              [32m+[0m [0mself             = false
+              [32m+[0m [0mto_port          = 22
+            },
+        ]
+      [32m+[0m [0m[1m[0mname[0m[0m                   = "DevOps-SG"
+      [32m+[0m [0m[1m[0mname_prefix[0m[0m            = (known after apply)
+      [32m+[0m [0m[1m[0mowner_id[0m[0m               = (known after apply)
+      [32m+[0m [0m[1m[0mrevoke_rules_on_delete[0m[0m = false
+      [32m+[0m [0m[1m[0mtags[0m[0m                   = {
+          [32m+[0m [0m"Name" = "DevOps-SG"
+        }
+      [32m+[0m [0m[1m[0mtags_all[0m[0m               = {
+          [32m+[0m [0m"Name" = "DevOps-SG"
+        }
+      [32m+[0m [0m[1m[0mvpc_id[0m[0m                 = (known after apply)
+    }
+
+[1m  # aws_subnet.DevOps-Private[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_subnet" "DevOps-Private" {
+      [32m+[0m [0m[1m[0marn[0m[0m                                            = (known after apply)
+      [32m+[0m [0m[1m[0massign_ipv6_address_on_creation[0m[0m                = false
+      [32m+[0m [0m[1m[0mavailability_zone[0m[0m                              = "ap-south-1a"
+      [32m+[0m [0m[1m[0mavailability_zone_id[0m[0m                           = (known after apply)
+      [32m+[0m [0m[1m[0mcidr_block[0m[0m                                     = "10.0.2.0/24"
+      [32m+[0m [0m[1m[0menable_dns64[0m[0m                                   = false
+      [32m+[0m [0m[1m[0menable_resource_name_dns_a_record_on_launch[0m[0m    = false
+      [32m+[0m [0m[1m[0menable_resource_name_dns_aaaa_record_on_launch[0m[0m = false
+      [32m+[0m [0m[1m[0mid[0m[0m                                             = (known after apply)
+      [32m+[0m [0m[1m[0mipv6_cidr_block_association_id[0m[0m                 = (known after apply)
+      [32m+[0m [0m[1m[0mipv6_native[0m[0m                                    = false
+      [32m+[0m [0m[1m[0mmap_public_ip_on_launch[0m[0m                        = false
+      [32m+[0m [0m[1m[0mowner_id[0m[0m                                       = (known after apply)
+      [32m+[0m [0m[1m[0mprivate_dns_hostname_type_on_launch[0m[0m            = (known after apply)
+      [32m+[0m [0m[1m[0mtags[0m[0m                                           = {
+          [32m+[0m [0m"Name" = "DevOps-Private-Subnet"
+        }
+      [32m+[0m [0m[1m[0mtags_all[0m[0m                                       = {
+          [32m+[0m [0m"Name" = "DevOps-Private-Subnet"
+        }
+      [32m+[0m [0m[1m[0mvpc_id[0m[0m                                         = (known after apply)
+    }
+
+[1m  # aws_subnet.DevOps-Public[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_subnet" "DevOps-Public" {
+      [32m+[0m [0m[1m[0marn[0m[0m                                            = (known after apply)
+      [32m+[0m [0m[1m[0massign_ipv6_address_on_creation[0m[0m                = false
+      [32m+[0m [0m[1m[0mavailability_zone[0m[0m                              = "ap-south-1a"
+      [32m+[0m [0m[1m[0mavailability_zone_id[0m[0m                           = (known after apply)
+      [32m+[0m [0m[1m[0mcidr_block[0m[0m                                     = "10.0.1.0/24"
+      [32m+[0m [0m[1m[0menable_dns64[0m[0m                                   = false
+      [32m+[0m [0m[1m[0menable_resource_name_dns_a_record_on_launch[0m[0m    = false
+      [32m+[0m [0m[1m[0menable_resource_name_dns_aaaa_record_on_launch[0m[0m = false
+      [32m+[0m [0m[1m[0mid[0m[0m                                             = (known after apply)
+      [32m+[0m [0m[1m[0mipv6_cidr_block_association_id[0m[0m                 = (known after apply)
+      [32m+[0m [0m[1m[0mipv6_native[0m[0m                                    = false
+      [32m+[0m [0m[1m[0mmap_public_ip_on_launch[0m[0m                        = false
+      [32m+[0m [0m[1m[0mowner_id[0m[0m                                       = (known after apply)
+      [32m+[0m [0m[1m[0mprivate_dns_hostname_type_on_launch[0m[0m            = (known after apply)
+      [32m+[0m [0m[1m[0mtags[0m[0m                                           = {
+          [32m+[0m [0m"Name" = "DevOps-Public-Subnet"
+        }
+      [32m+[0m [0m[1m[0mtags_all[0m[0m                                       = {
+          [32m+[0m [0m"Name" = "DevOps-Public-Subnet"
+        }
+      [32m+[0m [0m[1m[0mvpc_id[0m[0m                                         = (known after apply)
+    }
+
+[1m  # aws_vpc.DevOps-VPC[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_vpc" "DevOps-VPC" {
+      [32m+[0m [0m[1m[0marn[0m[0m                                  = (known after apply)
+      [32m+[0m [0m[1m[0mcidr_block[0m[0m                           = "10.0.0.0/16"
+      [32m+[0m [0m[1m[0mdefault_network_acl_id[0m[0m               = (known after apply)
+      [32m+[0m [0m[1m[0mdefault_route_table_id[0m[0m               = (known after apply)
+      [32m+[0m [0m[1m[0mdefault_security_group_id[0m[0m            = (known after apply)
+      [32m+[0m [0m[1m[0mdhcp_options_id[0m[0m                      = (known after apply)
+      [32m+[0m [0m[1m[0menable_classiclink[0m[0m                   = (known after apply)
+      [32m+[0m [0m[1m[0menable_classiclink_dns_support[0m[0m       = (known after apply)
+      [32m+[0m [0m[1m[0menable_dns_hostnames[0m[0m                 = (known after apply)
+      [32m+[0m [0m[1m[0menable_dns_support[0m[0m                   = true
+      [32m+[0m [0m[1m[0mid[0m[0m                                   = (known after apply)
+      [32m+[0m [0m[1m[0minstance_tenancy[0m[0m                     = "default"
+      [32m+[0m [0m[1m[0mipv6_association_id[0m[0m                  = (known after apply)
+      [32m+[0m [0m[1m[0mipv6_cidr_block[0m[0m                      = (known after apply)
+      [32m+[0m [0m[1m[0mipv6_cidr_block_network_border_group[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0mmain_route_table_id[0m[0m                  = (known after apply)
+      [32m+[0m [0m[1m[0mowner_id[0m[0m                             = (known after apply)
+      [32m+[0m [0m[1m[0mtags[0m[0m                                 = {
+          [32m+[0m [0m"Name" = "DevOps VPC"
+        }
+      [32m+[0m [0m[1m[0mtags_all[0m[0m                             = {
+          [32m+[0m [0m"Name" = "DevOps VPC"
+        }
+    }
+
+[0m[1mPlan:[0m 11 to add, 0 to change, 0 to destroy.
+[0m[0m
+[1mChanges to Outputs:[0m[0m
+  [32m+[0m [0m[1m[0minstance_id[0m[0m         = (known after apply)
+  [32m+[0m [0m[1m[0minstance_public_dns[0m[0m = (known after apply)
+  [32m+[0m [0m[1m[0minstance_public_ip[0m[0m  = (known after apply)
+[0m[1maws_key_pair.DevOps-Key: Creating...[0m[0m
+[0m[1maws_vpc.DevOps-VPC: Creating...[0m[0m
+[0m[1maws_key_pair.DevOps-Key: Creation complete after 0s [id=devops][0m
+[0m[1maws_vpc.DevOps-VPC: Creation complete after 1s [id=vpc-04b98da66a85fc411][0m
+[0m[1maws_subnet.DevOps-Private: Creating...[0m[0m
+[0m[1maws_subnet.DevOps-Public: Creating...[0m[0m
+[0m[1maws_internet_gateway.DevOps-IGW: Creating...[0m[0m
+[0m[1maws_security_group.DevOps-SG: Creating...[0m[0m
+[0m[1maws_subnet.DevOps-Private: Creation complete after 0s [id=subnet-0c758db6d3206c6e4][0m
+[0m[1maws_subnet.DevOps-Public: Creation complete after 0s [id=subnet-09090964ae950c75b][0m
+[0m[1maws_internet_gateway.DevOps-IGW: Creation complete after 0s [id=igw-0bf1e79214fb28ccc][0m
+[0m[1maws_route_table.DevOps-rt: Creating...[0m[0m
+[0m[1maws_route_table.DevOps-rt: Creation complete after 1s [id=rtb-0149d5ff869039589][0m
+[0m[1maws_route_table_association.a: Creating...[0m[0m
+[0m[1maws_route_table_association.a: Creation complete after 0s [id=rtbassoc-056df347b04ba4d3c][0m
+[0m[1maws_security_group.DevOps-SG: Creation complete after 2s [id=sg-03bdb1cdde23e2f3e][0m
+[0m[1maws_network_interface.DevOps-nic: Creating...[0m[0m
+[0m[1maws_network_interface.DevOps-nic: Creation complete after 0s [id=eni-0c3813a28c7d5ee2a][0m
+[0m[1maws_eip.Dev-Ops-eip: Creating...[0m[0m
+[0m[1maws_instance.Jenkins-Host: Creating...[0m[0m
+[0m[1maws_eip.Dev-Ops-eip: Creation complete after 1s [id=eipalloc-088d59500ab6a2707][0m
+[0m[1maws_instance.Jenkins-Host: Still creating... [10s elapsed][0m[0m
+[0m[1maws_instance.Jenkins-Host: Still creating... [20s elapsed][0m[0m
+[0m[1maws_instance.Jenkins-Host: Still creating... [30s elapsed][0m[0m
+[0m[1maws_instance.Jenkins-Host: Provisioning with 'remote-exec'...[0m[0m
+[0m[1maws_instance.Jenkins-Host (remote-exec):[0m [0mConnecting to remote host via SSH...
+[0m[1maws_instance.Jenkins-Host (remote-exec):[0m [0m  Host: 3.109.11.53
+[0m[1maws_instance.Jenkins-Host (remote-exec):[0m [0m  User: ec2-user
+[0m[1maws_instance.Jenkins-Host (remote-exec):[0m [0m  Password: false
+[0m[1maws_instance.Jenkins-Host (remote-exec):[0m [0m  Private key: true
+[0m[1maws_instance.Jenkins-Host (remote-exec):[0m [0m  Certificate: false
+[0m[1maws_instance.Jenkins-Host (remote-exec):[0m [0m  SSH Agent: true
+[0m[1maws_instance.Jenkins-Host (remote-exec):[0m [0m  Checking Host Key: false
+[0m[1maws_instance.Jenkins-Host (remote-exec):[0m [0m  Target Platform: unix
+[0m[1maws_instance.Jenkins-Host (remote-exec):[0m [0mConnected!
+[0m[1maws_instance.Jenkins-Host (remote-exec):[0m [0mwait until SSH is ready
+[0m[1maws_instance.Jenkins-Host: Provisioning with 'local-exec'...[0m[0m
+[0m[1maws_instance.Jenkins-Host (local-exec):[0m [0mExecuting: ["/bin/sh" "-c" "ansible-playbook  -i 3.109.11.53, --private-key ~/.ssh/devops /home/sumit/Documents/Simplilearn-DevOps-Training/playbook/DevOps-tasks.yml"]
+
+[0m[1maws_instance.Jenkins-Host (local-exec):[0m [0mPLAY [all] *********************************************************************
+
+[0m[1maws_instance.Jenkins-Host (local-exec):[0m [0mTASK [Gathering Facts] *********************************************************
+[0m[1maws_instance.Jenkins-Host (local-exec):[0m [0m[WARNING]: Platform linux on host 3.109.11.53 is using the discovered Python
+[0m[1maws_instance.Jenkins-Host (local-exec):[0m [0minterpreter at /usr/bin/python, but future installation of another Python
+[0m[1maws_instance.Jenkins-Host (local-exec):[0m [0minterpreter could change the meaning of that path. See
+[0m[1maws_instance.Jenkins-Host (local-exec):[0m [0mhttps://docs.ansible.com/ansible-
+[0m[1maws_instance.Jenkins-Host (local-exec):[0m [0mcore/2.11/reference_appendices/interpreter_discovery.html for more information.
+[0m[1maws_instance.Jenkins-Host (local-exec):[0m [0mok: [3.109.11.53]
+
+[0m[1maws_instance.Jenkins-Host (local-exec):[0m [0mTASK [update-packages : Upgrade packages] **************************************
+[0m[1maws_instance.Jenkins-Host: Still creating... [40s elapsed][0m[0m
+[0m[1maws_instance.Jenkins-Host: Still creating... [50s elapsed][0m[0m
+[0m[1maws_instance.Jenkins-Host: Still creating... [1m0s elapsed][0m[0m
+[0m[1maws_instance.Jenkins-Host (local-exec):[0m [0mchanged: [3.109.11.53]
+
+[0m[1maws_instance.Jenkins-Host (local-exec):[0m [0mTASK [java : Install Java] *****************************************************
+[0m[1maws_instance.Jenkins-Host: Still creating... [1m10s elapsed][0m[0m
+[0m[1maws_instance.Jenkins-Host: Still creating... [1m20s elapsed][0m[0m
+[0m[1maws_instance.Jenkins-Host (local-exec):[0m [0mchanged: [3.109.11.53]
+
+[0m[1maws_instance.Jenkins-Host (local-exec):[0m [0mTASK [python : Install Python3] ************************************************
+[0m[1maws_instance.Jenkins-Host (local-exec):[0m [0mok: [3.109.11.53]
+
+[0m[1maws_instance.Jenkins-Host (local-exec):[0m [0mTASK [Jenkins : Download jenkins.repo] *****************************************
+[0m[1maws_instance.Jenkins-Host (local-exec):[0m [0mchanged: [3.109.11.53]
+
+[0m[1maws_instance.Jenkins-Host (local-exec):[0m [0mTASK [Jenkins : Import Jenkins Key] ********************************************
+[0m[1maws_instance.Jenkins-Host (local-exec):[0m [0mchanged: [3.109.11.53]
+
+[0m[1maws_instance.Jenkins-Host (local-exec):[0m [0mTASK [Jenkins : Install Jenkins] ***********************************************
+[0m[1maws_instance.Jenkins-Host: Still creating... [1m30s elapsed][0m[0m
+[0m[1maws_instance.Jenkins-Host: Still creating... [1m40s elapsed][0m[0m
+[0m[1maws_instance.Jenkins-Host: Still creating... [1m50s elapsed][0m[0m
+[0m[1maws_instance.Jenkins-Host: Still creating... [2m0s elapsed][0m[0m
+[0m[1maws_instance.Jenkins-Host: Still creating... [2m10s elapsed][0m[0m
+[0m[1maws_instance.Jenkins-Host: Still creating... [2m20s elapsed][0m[0m
+[0m[1maws_instance.Jenkins-Host: Still creating... [2m30s elapsed][0m[0m
+[0m[1maws_instance.Jenkins-Host: Still creating... [2m40s elapsed][0m[0m
+[0m[1maws_instance.Jenkins-Host: Still creating... [2m50s elapsed][0m[0m
+[0m[1maws_instance.Jenkins-Host: Still creating... [3m0s elapsed][0m[0m
+[0m[1maws_instance.Jenkins-Host: Still creating... [3m10s elapsed][0m[0m
+[0m[1maws_instance.Jenkins-Host: Still creating... [3m20s elapsed][0m[0m
+[0m[1maws_instance.Jenkins-Host: Still creating... [3m30s elapsed][0m[0m
+[0m[1maws_instance.Jenkins-Host: Still creating... [3m40s elapsed][0m[0m
+[0m[1maws_instance.Jenkins-Host: Still creating... [3m50s elapsed][0m[0m
+[0m[1maws_instance.Jenkins-Host: Still creating... [4m0s elapsed][0m[0m
+[0m[1maws_instance.Jenkins-Host: Still creating... [4m10s elapsed][0m[0m
+[0m[1maws_instance.Jenkins-Host: Still creating... [4m20s elapsed][0m[0m
+[0m[1maws_instance.Jenkins-Host: Still creating... [4m30s elapsed][0m[0m
+[0m[1maws_instance.Jenkins-Host: Still creating... [4m40s elapsed][0m[0m
+[0m[1maws_instance.Jenkins-Host: Still creating... [4m50s elapsed][0m[0m
+[0m[1maws_instance.Jenkins-Host: Still creating... [5m0s elapsed][0m[0m
+[0m[1maws_instance.Jenkins-Host: Still creating... [5m10s elapsed][0m[0m
+[0m[1maws_instance.Jenkins-Host: Still creating... [5m20s elapsed][0m[0m
+[0m[1maws_instance.Jenkins-Host: Still creating... [5m30s elapsed][0m[0m
+[0m[1maws_instance.Jenkins-Host: Still creating... [5m40s elapsed][0m[0m
+[0m[1maws_instance.Jenkins-Host: Still creating... [5m50s elapsed][0m[0m
+[0m[1maws_instance.Jenkins-Host: Still creating... [6m0s elapsed][0m[0m
+[0m[1maws_instance.Jenkins-Host: Still creating... [6m10s elapsed][0m[0m
+[0m[1maws_instance.Jenkins-Host: Still creating... [6m20s elapsed][0m[0m
+[0m[1maws_instance.Jenkins-Host: Still creating... [6m30s elapsed][0m[0m
+[0m[1maws_instance.Jenkins-Host: Still creating... [6m40s elapsed][0m[0m
+[0m[1maws_instance.Jenkins-Host: Still creating... [6m50s elapsed][0m[0m
+[0m[1maws_instance.Jenkins-Host: Still creating... [7m0s elapsed][0m[0m
+[0m[1maws_instance.Jenkins-Host: Still creating... [7m10s elapsed][0m[0m
+[0m[1maws_instance.Jenkins-Host: Still creating... [7m20s elapsed][0m[0m
+[0m[1maws_instance.Jenkins-Host: Still creating... [7m30s elapsed][0m[0m
+[0m[1maws_instance.Jenkins-Host: Still creating... [7m40s elapsed][0m[0m
+[0m[1maws_instance.Jenkins-Host: Still creating... [7m50s elapsed][0m[0m
+[0m[1maws_instance.Jenkins-Host: Still creating... [8m0s elapsed][0m[0m
+[0m[1maws_instance.Jenkins-Host: Still creating... [8m10s elapsed][0m[0m
+[0m[1maws_instance.Jenkins-Host: Still creating... [8m20s elapsed][0m[0m
+[0m[1maws_instance.Jenkins-Host: Still creating... [8m30s elapsed][0m[0m
+[0m[1maws_instance.Jenkins-Host: Still creating... [8m40s elapsed][0m[0m
+[0m[1maws_instance.Jenkins-Host: Still creating... [8m50s elapsed][0m[0m
+[0m[1maws_instance.Jenkins-Host: Still creating... [9m0s elapsed][0m[0m
+[0m[1maws_instance.Jenkins-Host: Still creating... [9m10s elapsed][0m[0m
+[0m[1maws_instance.Jenkins-Host: Still creating... [9m20s elapsed][0m[0m
+[0m[1maws_instance.Jenkins-Host: Still creating... [9m30s elapsed][0m[0m
+[0m[1maws_instance.Jenkins-Host: Still creating... [9m40s elapsed][0m[0m
+[0m[1maws_instance.Jenkins-Host: Still creating... [9m50s elapsed][0m[0m
+[0m[1maws_instance.Jenkins-Host: Still creating... [10m0s elapsed][0m[0m
+[0m[1maws_instance.Jenkins-Host: Still creating... [10m10s elapsed][0m[0m
+[0m[1maws_instance.Jenkins-Host: Still creating... [10m20s elapsed][0m[0m
+[0m[1maws_instance.Jenkins-Host: Still creating... [10m30s elapsed][0m[0m
+[0m[1maws_instance.Jenkins-Host: Still creating... [10m40s elapsed][0m[0m
+[0m[1maws_instance.Jenkins-Host: Still creating... [10m50s elapsed][0m[0m
+[0m[1maws_instance.Jenkins-Host: Still creating... [11m0s elapsed][0m[0m
+
+Interrupt received.
+Please wait for Terraform to exit or data loss may occur.
+Gracefully shutting down...
+
+Stopping operation...
+[0m[1maws_instance.Jenkins-Host (local-exec):[0m [0m [ERROR]: User interrupted execution
