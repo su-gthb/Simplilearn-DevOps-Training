@@ -3,3 +3,4 @@ cred.tf
 *.backup
 .terraform/*
 .terraform.*
+Jenkins/*
