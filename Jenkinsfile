@@ -8,7 +8,7 @@
     stages {
       stage('fetch_latest_code') {
         steps {
-          git url: 'https://github.com/su-gthb/Simplilearn-DevOps-Training.git'
+          git branch: 'main', changelog: false, url: 'https://github.com/su-gthb/Simplilearn-DevOps-Training.git'
         }
       }
 
